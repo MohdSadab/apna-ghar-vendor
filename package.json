@@ -1,0 +1,22 @@
+{
+  "name": "apna-ghar-vendor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vendorserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.18.1",
+    "ps": "^1.0.0"
+  }
+}
