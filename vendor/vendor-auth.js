@@ -20,18 +20,17 @@ router.post("/signin", async (req, res) => {
     try {
 
         const user = await vendorQueries.signIn(req, client);
-        // console.log(user);
+        console.log(user);
 
         if (user && user.rows.length > 0) {
-            delete user.rows[0].password;
             const payload = JSON.stringify({
-                id: user.rows[0].id,
+                id: user.rows[0].vendorid,
                 email: user.rows[0].email
             })
             console.log(payload);
 
             jwt.sign({
-                id: user.rows[0].id,
+                id: user.rows[0].vendorid,
                 email: user.rows[0].email,
                 iat: Math.floor(Date.now() / 1000)
             }, config.get('jwtSecret'), { expiresIn: '8h' }, (error, token) => {

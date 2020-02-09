@@ -27,6 +27,7 @@ module.exports = (req, res, next) => {
             else {
                 console.log(result);
                 req.user = result;
+                console.log(req.user,">>>user is");
                 next();
             }
         })
