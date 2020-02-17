@@ -7,7 +7,7 @@ const signIn = async (req, db) => {
 
     console.log(password);
     const query = {
-        text: 'Select * from  where email=$1',     
+        text: 'Select * from vender where email=$1',     
         values: [email]
     }
 
@@ -33,16 +33,37 @@ const getItems = async (req, db) => {
 
     try {
         const result = await db.query(query);
-            return result;
+            return result.rows;
 
     } catch (error) {
         console.log(error);
+        return [];
     }
 }
 
 
+const getItem =async (req,db)=>{
+
+    let itemId=req.params.id;
+
+      const query = {
+        text: "Select * from itemDetails where itemId=$1",
+        values: [itemId]
+      };
+
+      try {
+        const result = await db.query(query);
+        return result.rows;
+      } catch (error) {
+        console.log(error);
+        return [];
+      }
+
+}
+
 
 module.exports = {
     signIn,
-    getItems
+    getItems,
+    getItem
 }

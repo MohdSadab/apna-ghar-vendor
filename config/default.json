@@ -1,3 +1,5 @@
 {
-    "jwtSecret":"codingisfun"
+    "jwtSecret":"codingisfun",
+    "cloudinaryApi":"261666966223591",
+    "cloudinarySecretKey":"6aU20sINabxSOiumicockzlYM0g"
 }
